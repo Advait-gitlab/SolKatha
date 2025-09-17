@@ -1,0 +1,94 @@
+{
+  "bhagavad_gita_summary": [
+    {
+      "chapter": 1,
+      "title": "Observing the Armies on the Battlefield of Kurukshetra",
+      "summary": "Two armies, those of the Pandavas and the Kauravas, face each other on the Battlefield of Kurukshetra. Many signs indicate victory for the Pandavas. Dhritarashtra, the Pandavas’ uncle and the Kauravas’ father, doubts the possibility of his sons’ victory and asks Sanjaya, his secretary, to describe the scene on the battlefield. Arjuna undergoes a crisis just before the fight, overwhelmed by compassion for his family members and teachers. After presenting noble reasons not to fight, Arjuna casts aside his weapons, overwhelmed with grief. His reluctance indicates his kind heart and readiness for transcendental knowledge."
+    },
+    {
+      "chapter": 2,
+      "title": "Contents of the Gita Summarized",
+      "summary": "Krishna does not sympathize with Arjuna’s arguments but reminds him of his duty to fight. Arjuna, confused and aggrieved, asks Krishna for guidance and becomes his disciple. Krishna teaches that the soul is eternal and cannot be killed. Death in battle elevates fighters to higher births. Arjuna’s desire not to fight arises from material attachment, and Krishna advises him to practice buddhi-yoga—work without attachment to results—to free himself from rebirth and attain God’s kingdom."
+    },
+    {
+      "chapter": 3,
+      "title": "Karma–Yoga",
+      "summary": "Arjuna mistakes buddhi-yoga for renunciation, but Krishna clarifies: act without attachment and offer all results to the Supreme. This purifies and leads to the Supreme. Sacrifices for the Lord ensure prosperity and freedom from sin. Even the self-realized must perform duties to guide others. Lust is the cause of sinful acts and can be counteracted by self-control."
+    },
+    {
+      "chapter": 4,
+      "title": "Transcendental Knowledge",
+      "summary": "Krishna first spoke this science to the sun-god Vivasvan, passing it down in disciplic succession. Whenever irreligion rises, Krishna appears in His transcendental form. Understanding His nature leads to liberation. Krishna reciprocates with all according to their surrender. He created varnasrama to engage people according to their nature and raise them to transcendental knowledge. Doubt and ignorance prevent happiness and God-consciousness."
+    },
+    {
+      "chapter": 5,
+      "title": "Karma–Yoga – Action in Krishna Consciousness",
+      "summary": "Arjuna wonders whether renunciation or work in devotion is superior. Krishna explains that devotional service is better since everything belongs to Him. Working in Krishna consciousness frees one from rebirth. Such a person is peaceful and divine, even while interacting with sense objects."
+    },
+    {
+      "chapter": 6,
+      "title": "Dhyana–Yoga",
+      "summary": "True mysticism is not abandoning duties but working without attachment to results. Real yoga means meeting the Supreme Soul in the heart with a controlled mind. By regulating eating, sleeping, work, and recreation, a yogi attains steadiness and Samadhi. The highest yogi always thinks of Krishna."
+    },
+    {
+      "chapter": 7,
+      "title": "Knowledge of the Absolute",
+      "summary": "Krishna reveals Himself as the source of all material and spiritual energies. Though He manifests material nature, He is not under its control. Krishna is the essence of everything. Four types of men surrender to Him, while others remain deluded. Those who understand Him as the cause of all causes engage in determined devotional service and attain Him."
+    },
+    {
+      "chapter": 8,
+      "title": "Attaining the Supreme",
+      "summary": "Arjuna asks seven questions about Brahman, self, fruitive activities, material manifestation, demigods, the Lord of sacrifice, and remembering Krishna at death. Krishna explains each. One’s consciousness at death determines one’s next state. By always thinking of Krishna while performing duty, one attains Him. Devotees automatically gain all Vedic results and reach His supreme abode."
+    },
+    {
+      "chapter": 9,
+      "title": "The Most Confidential Knowledge",
+      "summary": "Devotional service is the purest, most joyful, and eternal knowledge. Krishna pervades everything yet remains detached. Different worship leads to different results, but exclusive devotion to Krishna grants eternal association with Him. Whatever a devotee does, eats, or gives becomes an offering to Krishna, who protects and preserves His devotees. Even lowborn people can attain the Supreme by taking shelter of Krishna."
+    },
+    {
+      "chapter": 10,
+      "title": "The Opulence of the Absolute",
+      "summary": "Krishna is the unborn, beginningless Supreme Lord and creator of everything. All qualities arise from Him. Devotees who engage in service with faith derive bliss and enlightenment. Krishna personally dispels their ignorance. Arjuna recognizes Krishna’s supreme position, and Krishna concludes: all opulent, beautiful, and glorious creations come from but a spark of His splendor."
+    },
+    {
+      "chapter": 11,
+      "title": "The Universal Form",
+      "summary": "To demonstrate His divinity, Krishna shows Arjuna His universal form, containing everything past, present, and future. Arjuna sees all soldiers destined to die except the Pandavas. Krishna urges Arjuna to fight as His instrument. Afterward, Krishna returns to His original form. Only through pure devotion can one see this form."
+    },
+    {
+      "chapter": 12,
+      "title": "Devotional Service",
+      "summary": "Arjuna asks who is more perfect: the personal devotee or the impersonal meditator. Krishna replies that personal devotion is easiest and most perfect. The impersonal path is difficult. Devotional service can be practiced at various levels, and a devotee with qualities like tolerance, humility, friendliness, and freedom from envy is dear to Krishna."
+    },
+    {
+      "chapter": 13,
+      "title": "Nature, the Enjoyer and Consciousness",
+      "summary": "Arjuna inquires about nature, the enjoyer, the field, the knower, and knowledge. Krishna explains that the body is the field of activity, and both the soul and the Supreme Lord are knowers. True knowledge includes humility, nonviolence, tolerance, and self-control. By understanding the difference between the body and the knower, and the process of liberation, one attains the supreme goal."
+    },
+    {
+      "chapter": 14,
+      "title": "The Three Modes of Material Nature",
+      "summary": "Material nature consists of goodness, passion, and ignorance, which influence the soul. Goodness illuminates and frees one from sin but binds with happiness and knowledge. Passion drives endless desires and hard work, binding one to misery. Ignorance fosters laziness and delusion, leading to lower births. One who transcends all three modes through devotion attains Krishna’s nature."
+    },
+    {
+      "chapter": 15,
+      "title": "The Yoga of the Supreme Person",
+      "summary": "The material world is a reflection of the spiritual world, like a tree reflected in water. Its branches and leaves represent sensory objects and Vedic hymns. Detachment cuts this tree, leading one to Krishna. Everyone in the material world is fallible, but Krishna is the infallible Supreme Person beyond all."
+    },
+    {
+      "chapter": 16,
+      "title": "The Divine and Demoniac Natures",
+      "summary": "Beings are either divine or demoniac. Divine qualities such as charity, self-control, gentleness, and fearlessness lead to liberation. Demoniac qualities such as pride, envy, and anger bind one to rebirth and hell. Actions regulated by scripture lead to self-realization and the supreme destination; those who discard scripture attain neither happiness nor perfection."
+    },
+    {
+      "chapter": 17,
+      "title": "The Divisions of Faith",
+      "summary": "Arjuna asks about those who worship outside scripture. Krishna explains that faith, food, charity, austerity, and sacrifice reflect the modes of nature. The words 'om tat sat' symbolize the Supreme Truth. Sacrifice without faith is called 'asat'—impermanent."
+    },
+    {
+      "chapter": 18,
+      "title": "Conclusion: The Perfection of Renunciation",
+      "summary": "Krishna explains renunciation, the five causes of action, and the modes of understanding, determination, and happiness. Perfection is achieved by performing one’s own duties without attachment. The highest self-realization is pure devotion to Krishna. Arjuna’s illusion disappears, and he chooses to fight according to Krishna’s directions."
+    }
+  ]
+}
