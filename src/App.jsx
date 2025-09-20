@@ -7,7 +7,8 @@ import IntroPage from './components/IntroPage';
 import RegisterPage from './components/RegisterPage';
 import AdminLoginPage from './components/AdminLoginPage';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
-import LoginPage from './components/LoginPage'; // Assume this exists
+import LoginPage from './components/LoginPage';
+import CommunityWorkspace from './components/CommunityWorkspace';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -27,6 +28,10 @@ function App() {
         <Route
           path="/story"
           element={user ? <StoryViewer /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/community"
+          element={user ? <CommunityWorkspace /> : <Navigate to="/" />}
         />
       </Routes>
     </Router>
