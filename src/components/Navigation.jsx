@@ -1,4 +1,3 @@
-// src/components/Navigation.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -14,6 +13,7 @@ const Navigation = () => {
     try {
       await signOut(auth);
       navigate('/');
+      console.log('Signed out, redirecting to /'); // Debug log
     } catch (error) {
       console.error('Error signing out:', error);
     }
@@ -26,7 +26,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/dashboard" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-sm">K</span>
             </div>

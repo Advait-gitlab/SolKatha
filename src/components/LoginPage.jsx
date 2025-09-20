@@ -16,9 +16,10 @@ const LoginPage = () => {
     setError('');
     try {
       const user = await signInWithCredentials(formData.username, formData.password);
-      navigate('/chat');
+      navigate('/dashboard');
     } catch (error) {
-      setError(error.message);
+      setError(error.message || 'Login failed. Please try again.');
+      console.error('Login error:', error); // Log for debugging
     }
   };
 

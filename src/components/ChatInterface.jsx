@@ -4,7 +4,6 @@ import { generateKrishnaResponse, getSentimentScore } from '../services/geminiAP
 import { auth, db } from '../services/firebase';
 import { collection, addDoc, onSnapshot, query, orderBy, getDocs, where, updateDoc, doc, deleteDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import Navigation from './Navigation';
 
 const ChatInterface = () => {
   const [user] = useAuthState(auth);
@@ -121,53 +120,50 @@ const ChatInterface = () => {
   }
 
   return (
-    <>
-      <Navigation />
-      <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-purple-900 to-teal-500">
-        <div className="flex-1 w-3/4 overflow-y-auto p-4">
-          {messages
-            .filter((msg) => msg.userId === user.uid)
-            .map((msg) => (
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-purple-900 to-teal-500">
+      <div className="flex-1 w-3/4 overflow-y-auto p-4">
+        {messages
+          .filter((msg) => msg.userId === user.uid)
+          .map((msg) => (
+            <div
+              key={msg.id}
+              className={`flex mb-4 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+            >
               <div
-                key={msg.id}
-                className={`flex mb-4 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`p-4 rounded-lg max-w-xs ${
+                  msg.role === 'user'
+                    ? 'bg-teal-200 text-purple-900'
+                    : 'bg-gold-200 text-purple-900'
+                }`}
               >
-                <div
-                  className={`p-4 rounded-lg max-w-xs ${
-                    msg.role === 'user'
-                      ? 'bg-teal-200 text-purple-900'
-                      : 'bg-gold-200 text-purple-900'
-                  }`}
-                >
-                  {msg.content}
-                </div>
+                {msg.content}
               </div>
-            ))}
-        </div>
-        {isProcessing && (
-          <div className="mt-4 text-gold-200">Krishna is contemplating...</div>
-        )}
-        <div className="mt-4 flex space-x-4">
-          <input
-            type="text"
-            placeholder="What's on your mind?"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            onKeyPress={handleInput}
-            className="p-2 border rounded-lg w-1/2 text-center bg-white bg-opacity-80"
-            disabled={isProcessing}
-          />
-          <button
-            onClick={clearChat}
-            className="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-            disabled={isProcessing}
-          >
-            Clear Chat
-          </button>
-          <p className="text-white">Score: {mentalScore}</p>
-        </div>
+            </div>
+          ))}
       </div>
-    </>
+      {isProcessing && (
+        <div className="mt-4 text-gold-200">Krishna is contemplating...</div>
+      )}
+      <div className="mt-4 flex space-x-4">
+        <input
+          type="text"
+          placeholder="What's on your mind?"
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
+          onKeyPress={handleInput}
+          className="p-2 border rounded-lg w-1/2 text-center bg-white bg-opacity-80"
+          disabled={isProcessing}
+        />
+        <button
+          onClick={clearChat}
+          className="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+          disabled={isProcessing}
+        >
+          Clear Chat
+        </button>
+        <p className="text-white">Score: {mentalScore}</p>
+      </div>
+    </div>
   );
 };
 
