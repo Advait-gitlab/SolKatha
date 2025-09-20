@@ -18,8 +18,7 @@ const LoginPage = () => {
       const user = await signInWithCredentials(formData.username, formData.password);
       navigate('/dashboard');
     } catch (error) {
-      setError(error.message || 'Login failed. Please try again.');
-      console.error('Login error:', error); // Log for debugging
+      setError(error.message);
     }
   };
 
@@ -32,21 +31,21 @@ const LoginPage = () => {
           placeholder="Username"
           value={formData.username}
           onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black placeholder-gray-500"
         />
         <input
           type="password"
           placeholder="Password"
           value={formData.password}
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black placeholder-gray-500"
         />
         {error && <p className="text-red-500">{error}</p>}
-        <button type="submit" className="p-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600">
+        <button type="submit" className="p-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600 w-full">
           Login
         </button>
         <Link to="/forgot-password">
-          <p className="text-gold-500 hover:underline">Forgot Password?</p>
+          <p className="text-gold-500 hover:underline text-center">Forgot Password?</p>
         </Link>
       </form>
     </div>

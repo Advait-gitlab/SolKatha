@@ -59,27 +59,27 @@ const RegisterPage = () => {
           placeholder="Username"
           value={formData.username}
           onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         <input
           type="text"
           placeholder="Mobile (10 digits)"
           value={formData.mobile}
           onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         <input
           type="email"
           placeholder="Email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         <div className="flex space-x-2">
           <select
             value={formData.day}
             onChange={(e) => setFormData({ ...formData, day: e.target.value })}
-            className="p-2 border rounded-lg"
+            className="p-2 border rounded-lg text-black" // Added text-black
           >
             <option value="">Day</option>
             {Array.from({ length: 31 }, (_, i) => (
@@ -89,7 +89,7 @@ const RegisterPage = () => {
           <select
             value={formData.month}
             onChange={(e) => setFormData({ ...formData, month: e.target.value })}
-            className="p-2 border rounded-lg"
+            className="p-2 border rounded-lg text-black" // Added text-black
           >
             <option value="">Month</option>
             {Array.from({ length: 12 }, (_, i) => (
@@ -99,7 +99,7 @@ const RegisterPage = () => {
           <select
             value={formData.year}
             onChange={(e) => setFormData({ ...formData, year: e.target.value })}
-            className="p-2 border rounded-lg"
+            className="p-2 border rounded-lg text-black" // Added text-black
           >
             <option value="">Year</option>
             {Array.from({ length: 100 }, (_, i) => (
@@ -112,18 +112,18 @@ const RegisterPage = () => {
           placeholder="Profession"
           value={formData.profession}
           onChange={(e) => setFormData({ ...formData, profession: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         <input
           type="file"
           accept="application/pdf"
           onChange={(e) => setFormData({ ...formData, medicalHistory: e.target.files[0] })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         <select
           value={formData.avatar}
           onChange={(e) => setFormData({ ...formData, avatar: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         >
           <option value="">Select Avatar</option>
           {avatars.map((avatar) => (
@@ -135,14 +135,14 @@ const RegisterPage = () => {
           placeholder="Password"
           value={formData.password}
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         <input
           type="password"
           placeholder="Confirm Password"
           value={formData.confirmPassword}
           onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-          className="p-2 border rounded-lg w-full"
+          className="p-2 border rounded-lg w-full text-black" // Added text-black
         />
         {error && <p className="text-red-500">{error}</p>}
         <button type="submit" className="p-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600">
