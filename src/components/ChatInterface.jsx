@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { generateKrishnaResponse } from '../services/geminiAPI';
+import { generateKrishnaResponse, getSentimentScore } from '../services/geminiAPI';
 import { auth, db } from '../services/firebase';
-import { collection, addDoc, onSnapshot, query, orderBy, getDocs, deleteDoc } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, query, orderBy, getDocs, where, updateDoc, doc, deleteDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const ChatInterface = () => {
   const [user] = useAuthState(auth);
   const [userInput, setUserInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [mentalScore, setMentalScore] = useState(50);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
@@ -23,6 +26,7 @@ const ChatInterface = () => {
         ...doc.data(),
       }));
       setMessages(loadedMessages);
+      console.log('Messages loaded:', loadedMessages); // Debug log
     });
     return () => unsubscribe();
   }, [user]);
@@ -47,6 +51,23 @@ const ChatInterface = () => {
         userId: user.uid,
         timestamp: new Date(),
       });
+
+      const sentimentScore = getSentimentScore(userInput);
+      console.log('Current input sentiment score:', sentimentScore); // Debug log
+      if (sentimentScore < 0) {
+        await addDoc(collection(db, 'capsules'), {
+          userId: user.uid,
+          content: userInput,
+          sentiment: sentimentScore,
+          timestamp: new Date(),
+          revealed: false,
+        });
+        setMentalScore(prev => Math.max(0, prev - 10));
+        console.log('Redirecting to story with input:', userInput); // Debug log
+        navigate('/story', { state: { input: userInput } }); // Redirect on negative sentiment
+      } else if (sentimentScore > 0) {
+        setMentalScore(prev => Math.min(100, prev + 10));
+      }
     } catch (error) {
       console.error('Error handling input:', error);
       await addDoc(collection(db, 'messages'), {
@@ -63,15 +84,36 @@ const ChatInterface = () => {
 
   const clearChat = async () => {
     if (isProcessing || !user) return;
+    setIsProcessing(true);
     try {
       const q = query(collection(db, 'messages'), orderBy('timestamp', 'asc'));
       const snapshot = await getDocs(q);
-      await Promise.all(snapshot.docs.map((d) => deleteDoc(d.ref)));
+      await Promise.all(snapshot.docs.map(async (d) => {
+        await deleteDoc(doc(db, 'messages', d.id));
+      }));
       setMessages([]);
+      console.log('Chat cleared successfully');
     } catch (error) {
-      console.error('Error clearing chat:', error);
+      console.error('Error clearing chat:', error.message);
+    } finally {
+      setIsProcessing(false);
     }
   };
+
+  const revealCapsules = async () => {
+    if (mentalScore >= 60) {
+      const q = query(collection(db, 'capsules'), where('userId', '==', user.uid), where('revealed', '==', false));
+      const snapshot = await getDocs(q);
+      snapshot.forEach(async (docSnap) => {
+        await updateDoc(doc(db, 'capsules', docSnap.id), { revealed: true });
+        console.log('Revealed capsule:', docSnap.data().content);
+      });
+    }
+  };
+
+  useEffect(() => {
+    revealCapsules();
+  }, [mentalScore]);
 
   if (!user) {
     return <div className="flex items-center justify-center h-screen text-white">Please log in to chat.</div>;
@@ -119,6 +161,7 @@ const ChatInterface = () => {
         >
           Clear Chat
         </button>
+        <p className="text-white">Score: {mentalScore}</p>
       </div>
     </div>
   );

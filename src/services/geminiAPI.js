@@ -44,9 +44,14 @@ export const generateKrishnaResponse = async (userMessage, history = []) => {
 
     const result = await generateWithRetry(model, prompt);
     const response = await result.response.text();
-    return { response, sentiment: isNegative ? 'positive' : (isPositive ? 'positive' : 'neutral') };
+    return { response, sentiment: isNegative ? 'negative' : (isPositive ? 'positive' : 'neutral') };
   } catch (error) {
     console.error('Gemini API error:', error);
     return { response: 'Krishna is here to guide you. Please try again.', sentiment: '' };
   }
+};
+
+// New export for standalone sentiment scoring
+export const getSentimentScore = (input) => {
+  return sentimentAnalyzer.analyze(input).score; // Returns -ve, 0, or +ve
 };
